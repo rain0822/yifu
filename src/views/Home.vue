@@ -3,11 +3,11 @@
   <!--<HelloWorld msg="Welcome to Your Vue.js App" so="so far"/>-->
   <section>
     <div class="columns is-desktop">
-      <div class="column">
+      <div class="column" v-for="item in items" :key="item.id">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="../assets/card1.jpg" alt="Placeholder image">
+              <img v-bind:src="item.img" alt="Placeholder image">
             </figure>
           </div>
           <div class="card-content">
@@ -18,25 +18,16 @@
                 </figure>
               </div>
               <div class="media-content">
-                <p class="title is-4">開幕式活動</p>
-                <p class="subtitle is-6">#開幕式活動</p>
+                <p class="title is-4">{{item.title}}</p>
+                <p class="subtitle is-6">{{item.subtitle}}</p>
               </div>
             </div>
 
-            <div class="content">
-              感謝昨天各位嘉賓蒞臨我們
-              「YIFU 藝富演藝有限公司」
-              開幕式活動🎡
-              感謝所有藝富的工作人員幫忙
-              一起完成小而精美出色的開幕會
-              準備了各種豪華食物 飲料酒水 還有抽獎
-              小編也看了很羨慕
-              不只活動玩的很開心 與各方老闆交流收獲也很豐富
-              就來補一下昨天的活動照片給大家欣賞啦~
-            </div>
+            <div class="content">{{item.content}}</div>
           </div>
         </div>
       </div>
+
       <div class="column">
         <div class="card">
           <div class="card-image">
@@ -136,22 +127,18 @@
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>版權所有 © 藝富演藝有限公司</p>
-        <p>地址：三重區文化北路15號4F</p>
-      </div>
-    </footer>
   </section>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld.vue'
-
   export default {
-    name: 'app',
-    components: {
-      HelloWorld
+    name: 'app1',
+    data: function() {
+      return {
+        items: [
+          {title: '開幕式活動', subtitle: '#開幕式活動', img: '/yifu/img/card1.681ff81f.jpg', content: '感謝昨天各位嘉賓蒞臨我們「YIFU 藝富演藝有限公司」開幕式活動🎡 感謝所有藝富的工作人員幫忙 一起完成小而精美出色的開幕會 準備了各種豪華食物 飲料酒水 還有抽獎 小編也看了很羨慕 不只活動玩的很開心 與各方老闆交流收獲也很豐富 就來補一下昨天的活動照片給大家欣賞啦~'}
+        ]
+      }
     }
   }
 </script>

@@ -1,17 +1,43 @@
 <template>
   <div class="space">
-    <h1>This is an space page</h1>
-    <div>出租空間，方便</div>
-    <div>背包客住宿</div>
-    <div>教室空間出租</div>
-    <div>電腦軟硬體維修</div>
-    <div>視覺傳達設計</div>
-    <div>辦活動</div>
-    <div>攝影空間</div>
-    <div>教學課程</div>
-    <div>餐會</div>
-    <div>講座</div>
-    <div>團康娛樂</div>
-    <div>跳舞</div>
+    <section class="hero" v-for="item in items" :key="item.id" v-bind:class="'is-light'">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third">
+              <img src="../assets/card1.jpg" alt="Placeholder image">
+            </div>
+            <div class="column">
+              <h1 class="title">{{item.title}}</h1>
+              <h2 class="subtitle">...</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'app',
+    data: function() {
+      return {
+        items: [
+          {title: '出租空間，方便'},
+          {title: '背包客住宿'},
+          {title: '教室空間出租'},
+          {title: '電腦軟硬體維修'},
+          {title: '視覺傳達設計'},
+          {title: '辦活動'},
+          {title: '攝影空間'},
+          {title: '教學課程'},
+          {title: '餐會'},
+          {title: '講座'},
+          {title: '團康娛樂'},
+          {title: '跳舞'}
+        ]
+      }
+    }
+  }
+</script>

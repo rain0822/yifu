@@ -115,5 +115,12 @@
     </nav>
 
     <router-view/>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>版權所有 © 藝富演藝有限公司</p>
+        <p>地址：三重區文化北路15號4F</p>
+      </div>
+    </footer>
   </div>
 </template>
