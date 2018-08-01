@@ -3,8 +3,11 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Show from './views/Show.vue'
 import Space from './views/Space.vue'
+import Buefy from 'buefy'
+import 'buefy/lib/buefy.css'
 
-Vue.use(Router)
+Vue.use(Router);
+Vue.use(Buefy);
 
 export default new Router({
   routes: [

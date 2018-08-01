@@ -10,6 +10,12 @@
             <div class="column">
               <h1 class="title">{{item.title}}</h1>
               <h2 class="subtitle">...</h2>
+
+              <b-tabs v-model="activeTab">
+                <b-tab-item v-for="tab in item.tabs" :key="tab.id" :label="tab.title">
+                  {{tab.content}}
+                </b-tab-item>
+              </b-tabs>
             </div>
           </div>
         </div>
@@ -24,20 +30,63 @@
     data: function() {
       return {
         items: [
-          {title: '出租空間，方便'},
+          {title: '場地出租',
+            tabs: [{
+              title: '舞蹈空間',
+              content: '舞蹈空間'
+            },{
+              title: '攝影空間',
+              content: '攝影空間'
+            },{
+              title: '團康娛樂',
+              content: '團康娛樂'
+            },{
+              title: '講座會議',
+              content: '講座會議'
+            }]
+          },
           {title: '背包客住宿'},
-          {title: '教室空間出租'},
-          {title: '電腦軟硬體維修'},
           {title: '視覺傳達設計'},
-          {title: '辦活動'},
-          {title: '攝影空間'},
-          {title: '教學課程'},
-          {title: '餐會'},
-          {title: '講座'},
-          {title: '團康娛樂'},
-          {title: '跳舞'}
+          {title: '電腦軟硬體維修'}
         ]
       }
     }
   }
 </script>
+
+<style>
+  .tabs li.is-active a {
+    border-bottom-color: #7957d5 !important;
+    color: #7957d5 !important;
+  }
+
+  .tabs a {
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom-color: #dbdbdb;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    color: #4a4a4a;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: -1px;
+    padding: .5em 1em;
+    vertical-align: top;
+  }
+
+  .tabs ul {
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom-color: #dbdbdb !important;
+    border-bottom-style: solid !important;
+    border-bottom-width: 1px !important;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+</style>

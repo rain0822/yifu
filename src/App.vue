@@ -118,9 +118,38 @@
 
     <footer class="footer">
       <div class="content has-text-centered">
-        <p>版權所有 © 藝富演藝有限公司</p>
-        <p>地址：三重區文化北路15號4F</p>
+        <p>版權所有 ©【藝富演藝 & 藝富空間】</p>
+        <div class="columns">
+          <div class="column">
+            <div class="footer-title">地址</div>
+            新北市三重區文化北路15號4F
+          </div>
+          <div class="column">
+            <div class="footer-title">統一編號</div>
+            69441805
+          </div>
+          <div class="column">
+            <div class="footer-title">公司電話</div>
+            02-29760489
+          </div>
+          <div class="column">
+            <div class="footer-title">手機</div>
+            0918-308-736
+          </div>
+          <div class="column">
+            <div class="footer-title">LINE</div>
+            bboyshaobin
+          </div>
+        </div>
       </div>
     </footer>
   </div>
 </template>
+
+<style>
+  .footer-title {
+    color: #363636;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+</style>

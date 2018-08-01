@@ -1,6 +1,5 @@
 <template>
   <div class="show">
-
     <section class="hero" v-for="item in items" :key="item.id" v-bind:class="'is-light'">
       <div class="hero-body">
         <div class="container">
