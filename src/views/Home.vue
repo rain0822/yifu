@@ -49,6 +49,7 @@
             </div>
 
             <div class="content">
+              <a href="javascript:test();">aaa</a>
               大家久等了 ! !
               【藝富空間】設備都已經準備妥當，
               7/21號開幕後，即將要開始開課了！😁

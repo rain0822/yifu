@@ -4,11 +4,11 @@ import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
 import router from './router'
 
-Vue.use(Buefy)
+Vue.use(Buefy);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   router,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
