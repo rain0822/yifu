@@ -2,20 +2,27 @@
   <!--<img src="../assets/logo.jpg">-->
   <!--<HelloWorld msg="Welcome to Your Vue.js App" so="so far"/>-->
   <section>
-    <div class="columns is-desktop">
-      <div class="column" v-for="item in items" :key="item.id">
+    <div class="container">
+      <div class="columns is-desktop is-multiline">
+      <div class="column is-4" v-for="item in items" :key="item.id">
         <div class="card">
-          <div class="card-image">
+          <div class="card-image" v-if="item.img">
             <figure class="image is-4by3">
               <img v-bind:src="item.img" alt="Placeholder image">
             </figure>
           </div>
           <div class="card-content">
             <div class="media">
-              <div class="media-left">
+              <!--<div class="media-left">
                 <figure class="image is-48x48">
                   <img src="../assets/logo.jpg" alt="Placeholder image">
                 </figure>
+              </div>-->
+              <div class="media-left">
+                <a :href="item.from.link">{{item.from.name}}</a>
+              </div>
+              <div class="media-right" v-if="item.place">
+                — 在 <a :href="item.place.link">{{item.place.name}}</a>
               </div>
               <div class="media-content">
                 <p class="title is-4">{{item.title}}</p>
@@ -28,7 +35,7 @@
         </div>
       </div>
 
-      <div class="column">
+      <!--<div class="column is-4">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -49,7 +56,6 @@
             </div>
 
             <div class="content">
-              <a href="javascript:test();">aaa</a>
               大家久等了 ! !
               【藝富空間】設備都已經準備妥當，
               7/21號開幕後，即將要開始開課了！😁
@@ -63,7 +69,7 @@
           </div>
         </div>
       </div>
-      <div class="column">
+      <div class="column is-4">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -96,7 +102,7 @@
           </div>
         </div>
       </div>
-      <div class="column">
+      <div class="column is-4">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -125,20 +131,71 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
     </div>
-
+    </div>
   </section>
 </template>
 
 <script>
+  import Vue from 'vue'
+  import axios from 'axios'
+  import VueAxios from 'vue-axios'
+  import VueLogger from 'vuejs-logger';
+  const isProduction = process.env.NODE_ENV === 'production';
+
+  const options = {
+    isEnabled: true,
+    logLevel : isProduction ? 'error' : 'debug',
+    stringifyArguments : false,
+    showLogLevel : true,
+    showMethodName : true,
+    separator: '|',
+    showConsoleColors: true
+  };
+
+  Vue.use(VueLogger, options);
+  Vue.use(VueAxios, axios);
+
   export default {
     name: 'app1',
     data: function() {
+      let items = [
+        //{title: '開幕式活動', subtitle: '#開幕式活動', img: '/yifu/img/card1.681ff81f.jpg', content: '感謝昨天各位嘉賓蒞臨我們「YIFU 藝富演藝有限公司」開幕式活動🎡 感謝所有藝富的工作人員幫忙 一起完成小而精美出色的開幕會 準備了各種豪華食物 飲料酒水 還有抽獎 小編也看了很羨慕 不只活動玩的很開心 與各方老闆交流收獲也很豐富 就來補一下昨天的活動照片給大家欣賞啦~'}
+      ];
+      axios.get('https://graph.facebook.com/v3.1/913634415380449/feed?fields=from,attachments,message,created_time,place&access_token=EAAC1ZBttoruEBAMGeZB59joIJTegFd8LoAsTBy4KA7c0EHsoWwwP9SbLhgETKizIGfuxdZBMZCCpKr14dFjvg9ZCJvXkZAxt9rNZCzVmxFgkUBRiIhQ8S7PZCUT4VMvBQWmSQrgVlMnoZBwXKjENbQUvAk0TrrpsOphM4uCeAMlpkPgZDZD').then((response) => {
+        let self = this;
+        response.data.data.forEach(function(element) {
+          self.$log.info(element);
+
+          let data = {
+            from: {
+              link: `https://www.facebook.com/${element.from.id}`,
+              name: element.from.name
+            },
+            content: element.message,
+            createdTime: element.created_time
+          };
+          if(element.attachments) {
+            let aa = element.attachments.data[0];
+            if(aa.subattachments) {
+              data.img = aa.subattachments.data[0].media.image.src
+            } else {
+              data.img = element.attachments.data[0].media.image.src;
+            }
+
+          }
+          if(element.place) {
+            data.place = {
+              name: element.place.name,
+              link: `https://www.facebook.com/${element.place.id}`
+            }
+          }
+          items.push(data);
+        });
+      });
       return {
-        items: [
-          {title: '開幕式活動', subtitle: '#開幕式活動', img: '/yifu/img/card1.681ff81f.jpg', content: '感謝昨天各位嘉賓蒞臨我們「YIFU 藝富演藝有限公司」開幕式活動🎡 感謝所有藝富的工作人員幫忙 一起完成小而精美出色的開幕會 準備了各種豪華食物 飲料酒水 還有抽獎 小編也看了很羨慕 不只活動玩的很開心 與各方老闆交流收獲也很豐富 就來補一下昨天的活動照片給大家欣賞啦~'}
-        ]
+        items: items
       }
     }
   }
