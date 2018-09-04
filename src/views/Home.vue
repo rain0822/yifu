@@ -3,37 +3,37 @@
   <!--<HelloWorld msg="Welcome to Your Vue.js App" so="so far"/>-->
   <section>
     <div class="container">
-      <div class="columns is-desktop is-multiline">
-      <div class="column is-4" v-for="item in items" :key="item.id">
-        <div class="card">
-          <div class="card-image" v-if="item.img">
-            <figure class="image is-4by3">
-              <img v-bind:src="item.img" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media">
-              <!--<div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="../assets/logo.jpg" alt="Placeholder image">
-                </figure>
-              </div>-->
-              <div class="media-left">
-                <a :href="item.from.link">{{item.from.name}}</a>
-              </div>
-              <div class="media-right" v-if="item.place">
-                — 在 <a :href="item.place.link">{{item.place.name}}</a>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">{{item.title}}</p>
-                <p class="subtitle is-6">{{item.subtitle}}</p>
-              </div>
+      <div class="columns is-desktop is-multiline" v-for="item in items" :key="item.id">
+        <div class="column is-8">
+          <div class="card">
+            <div class="card-image" v-if="item.img">
+              <figure class="image is-4by3">
+                <img v-bind:src="item.img" alt="Placeholder image">
+              </figure>
             </div>
+            <div class="card-content">
+              <div class="media">
+                <!--<div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="../assets/logo.jpg" alt="Placeholder image">
+                  </figure>
+                </div>-->
+                <div class="media-left">
+                  <a :href="item.from.link">{{item.from.name}}</a>
+                </div>
+                <div class="media-right" v-if="item.place">
+                  — 在 <a :href="item.place.link">{{item.place.name}}</a>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">{{item.title}}</p>
+                  <p class="subtitle is-6">{{item.subtitle}}</p>
+                </div>
+              </div>
 
-            <div class="content">{{item.content}}</div>
+              <div class="content">{{item.content}}</div>
+            </div>
           </div>
         </div>
-      </div>
 
       <!--<div class="column is-4">
         <div class="card">
