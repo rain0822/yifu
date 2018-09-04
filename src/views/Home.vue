@@ -3,6 +3,36 @@
   <!--<HelloWorld msg="Welcome to Your Vue.js App" so="so far"/>-->
   <section>
     <div class="container">
+      <div class="columns is-desktop is-multiline" v-if="!items.length">
+        <div class="column is-8">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img style="background-color: #eee;">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="../assets/logo.jpg" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-left">
+                  <a href="https://www.facebook.com/913634415380449"></a>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4"></p>
+                  <p class="subtitle is-6"></p>
+                </div>
+              </div>
+
+              <div class="content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="columns is-desktop is-multiline" v-for="item in items" :key="item.id">
         <div class="column is-8">
           <div class="card">
@@ -13,11 +43,11 @@
             </div>
             <div class="card-content">
               <div class="media">
-                <!--<div class="media-left">
+                <div class="media-left">
                   <figure class="image is-48x48">
                     <img src="../assets/logo.jpg" alt="Placeholder image">
                   </figure>
-                </div>-->
+                </div>
                 <div class="media-left">
                   <a :href="item.from.link">{{item.from.name}}</a>
                 </div>
@@ -133,6 +163,8 @@
         </div>
       </div>-->
     </div>
+
+      <div><a href="https://www.facebook.com/YIFU2017" target="_blank">More...</a></div>
     </div>
   </section>
 </template>
@@ -195,7 +227,8 @@
         });
       });
       return {
-        items: items
+        items: items,
+        isLoading: true
       }
     }
   }
