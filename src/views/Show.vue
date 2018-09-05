@@ -16,11 +16,13 @@
         <div class="container">
           <div class="columns">
             <div class="column is-one-third">
-             <!-- <img src="../assets/show1.jpg">
-              <img src="../assets/show2.jpg">
-              <img src="../assets/show3.jpg">
-              <img src="../assets/show4.jpg">
-              <img src="../assets/show5.jpg">-->
+              <span style="display: none;">
+                <img src="../assets/show1.jpg">
+                <img src="../assets/show2.jpg">
+                <img src="../assets/show3.jpg">
+                <img src="../assets/show4.jpg">
+                <img src="../assets/show5.jpg">
+              </span>
               <img :src="item.img" alt="Placeholder image">
             </div>
             <div class="column">
