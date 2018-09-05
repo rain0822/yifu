@@ -1,7 +1,7 @@
 <template>
   <!--<img src="../assets/logo.jpg">-->
   <!--<HelloWorld msg="Welcome to Your Vue.js App" so="so far"/>-->
-  <div class="home">
+  <div class="container">
     <section class="hero">
         <div class="columns" v-if="!items.length">
           <div class="column is-8">
