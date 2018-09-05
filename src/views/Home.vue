@@ -41,6 +41,15 @@
                 <img v-bind:src="item.img" alt="Placeholder image">
               </figure>
             </div>
+            <div class="card-image" v-if="item.imgs" >
+              <carousel-3d>
+                <slide v-for="(img, index) in item.imgs" :key="img.id" :index="index">
+                  <template>
+                    <img :src="img.img">
+                  </template>
+                </slide>
+              </carousel-3d>
+            </div>
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
@@ -211,7 +220,14 @@
           if(element.attachments) {
             let aa = element.attachments.data[0];
             if(aa.subattachments) {
-              data.img = aa.subattachments.data[0].media.image.src
+              //data.img = aa.subattachments.data[0].media.image.src
+              data.imgs = [];
+              aa.subattachments.data.forEach(function(datum) {
+                data.imgs.push({
+                  id: datum.target.id,
+                  img: datum.media.image.src
+                });
+              });
             } else {
               data.img = element.attachments.data[0].media.image.src;
             }
