@@ -1,21 +1,38 @@
 <template>
   <div class="show">
-    <section class="hero" v-for="item in items" :key="item.id" v-bind:class="'is-light'">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="content">
+            <h1>藝富演藝</h1>
+            <p>提供專業的演藝娛樂的大板塊，由整體藝術所延伸舞蹈，特技，雜技，魔術，傳統民俗，戲劇等...</p>
+            <p>整合所有資源，不管是演藝經紀或者是藝富旗下藝人，都可在表演穿插客製化設計演出內容主題 性感、互動性、親和力、熱情、活力、頑皮等特色安排，，這個網路世代，藉由客製化的演出內容結合行銷(公司、產品、活動、核心價值等服務內容)，我們團隊是您最適合合作的對象</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero" v-for="item in items" :key="item.id">
       <div class="hero-body">
         <div class="container">
           <div class="columns">
             <div class="column is-one-third">
-              <img src="../assets/card1.jpg" alt="Placeholder image">
+             <!-- <img src="../assets/show1.jpg">
+              <img src="../assets/show2.jpg">
+              <img src="../assets/show3.jpg">
+              <img src="../assets/show4.jpg">
+              <img src="../assets/show5.jpg">-->
+              <img :src="item.img" alt="Placeholder image">
             </div>
             <div class="column">
-              <h1 class="title">{{item.title}}</h1>
-              <h2 class="subtitle">...</h2>
+              <div class="content">
+                <h3>{{item.title}}</h3>
+                <p>{{item.description}}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
   </div>
 </template>
 
@@ -24,21 +41,27 @@
     name: 'app',
     data: function() {
       return {
-        items: [
-          {title: '賣藝、專業'},
-          {title: '外面教課'},
-          {title: '主持'},
-          {title: '葉配'},
-          {title: '代言'},
-          {title: '街頭藝人'},
-          {title: '組織化'},
-          {title: '藝富寶貝'},
-          {title: '藝富男孩'},
-          {title: 'LED特技團'},
-          {title: 'BBOY團'},
-          {title: '表演人才派遣'},
-          {title: '外包資源'}
-        ]
+        items: [{
+          title: '藝富街頭藝人',
+          description: '由一群北區街頭藝人所組成',
+          img: '/yifu/img/show1.10fdf615.jpg'
+        },{
+          title: '藝富寶貝',
+          description: '專業的女舞團',
+          img: '/yifu/img/show2.4b146219.jpg'
+        },{
+          title: '藝富男孩',
+          description: '地板動作&特技 帥氣又厲害的男團',
+          img: '/yifu/img/show3.b15a6c8c.jpg'
+        },{
+          title: '專業操偶師',
+          description: '擅長偶裝操作的團隊，曾到日本參訪熊本熊行銷',
+          img: '/yifu/img/show4.ed19c340.jpg'
+        },{
+          title: '迷幻特技LED',
+          description: '一群練雜技，特技，街舞所組成的團隊，表演時可置入LED演出',
+          img: '/yifu/img/show5.c5560354.jpg'
+        }]
       }
     }
   }

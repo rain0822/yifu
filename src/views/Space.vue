@@ -1,22 +1,11 @@
 <template>
   <div class="space">
-    <section class="hero" v-for="item in items" :key="item.id" v-bind:class="'is-light'">
+    <section class="hero">
       <div class="hero-body">
         <div class="container">
-          <div class="columns">
-            <div class="column is-one-third">
-              <img src="../assets/card1.jpg" alt="Placeholder image">
-            </div>
-            <div class="column">
-              <h1 class="title">{{item.title}}</h1>
-              <h2 class="subtitle">...</h2>
-
-              <b-tabs v-model="activeTab">
-                <b-tab-item v-for="tab in item.tabs" :key="tab.id" :label="tab.title">
-                  {{tab.content}}
-                </b-tab-item>
-              </b-tabs>
-            </div>
+          <div class="content">
+            <h1>藝富空間</h1>
+            <p>提供現場”電腦軟硬體維修”與”活動包場”（提供桌椅、鏡子、音響設備、麥克風、等），不管是要辦(講座、餐會、團康、課程)在這個五臟俱全的空間與絕佳的地理環境，是您最佳合適的選擇。</p>
           </div>
         </div>
       </div>

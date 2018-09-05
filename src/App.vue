@@ -168,4 +168,7 @@
     font-size: 1.25rem;
     font-weight: 600;
   }
+  a {
+    color: #1a0dab;
+  }
 </style>
