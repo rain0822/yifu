@@ -30,9 +30,10 @@
 
         <div id="navMenuDocumentation" class="navbar-menu" v-bind:class="[isActive ? 'is-active' : '']">
           <div class="navbar-start">
-            <router-link to="/show" class="navbar-item bd-navbar-item-videos">藝富演藝</router-link>
-            <router-link to="/space" class="navbar-item bd-navbar-item-blog">藝富空間</router-link>
-
+            <router-link to="/about" class="navbar-item bd-navbar-item-videos">藝富演藝</router-link>
+            <router-link to="/show" class="navbar-item bd-navbar-item-videos">商業表演</router-link>
+            <router-link to="/news" class="navbar-item bd-navbar-item-blog">最新消息</router-link>
+            <router-link to="/contact" class="navbar-item bd-navbar-item-blog">聯絡我們</router-link>
             <!--<div class="navbar-item has-dropdown is-hoverable">
 
               <a class="navbar-link" href="#">
