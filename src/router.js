@@ -6,6 +6,7 @@ import Space from './views/Space.vue'
 import About from './views/About.vue'
 import News from './views/News.vue'
 import Contact from './views/Contact.vue'
+import Partner from './views/Partner.vue'
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
 
@@ -38,6 +39,10 @@ export default new Router({
       path: '/news',
       name: 'news',
       component: News
+    }, {
+      path: '/partner',
+      name: 'partner',
+      component: Partner
     }
   ]
 })

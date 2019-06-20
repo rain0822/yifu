@@ -34,6 +34,7 @@
             <router-link to="/show" class="navbar-item bd-navbar-item-videos">商業表演</router-link>
             <router-link to="/news" class="navbar-item bd-navbar-item-blog">最新消息</router-link>
             <router-link to="/contact" class="navbar-item bd-navbar-item-blog">聯絡我們</router-link>
+            <router-link to="/partner" class="navbar-item bd-navbar-item-blog">戰略夥伴</router-link>
             <!--<div class="navbar-item has-dropdown is-hoverable">
 
               <a class="navbar-link" href="#">
