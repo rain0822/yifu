@@ -48,23 +48,23 @@
         items: [{
           title: '藝富街頭藝人',
           description: '由一群北區街頭藝人所組成',
-          img: '/yifu/img/show1.10fdf615.jpg'
+          img: '/img/show1.10fdf615.jpg'
         },{
           title: '藝富寶貝',
           description: '專業的女舞團',
-          img: '/yifu/img/show2.4b146219.jpg'
+          img: '/img/show2.4b146219.jpg'
         },{
           title: '藝富男孩',
           description: '地板動作&特技 帥氣又厲害的男團',
-          img: '/yifu/img/show3.b15a6c8c.jpg'
+          img: '/img/show3.b15a6c8c.jpg'
         },{
           title: '專業操偶師',
           description: '擅長偶裝操作的團隊，曾到日本參訪熊本熊行銷',
-          img: '/yifu/img/show4.ed19c340.jpg'
+          img: '/img/show4.ed19c340.jpg'
         },{
           title: '迷幻特技LED',
           description: '一群練雜技，特技，街舞所組成的團隊，表演時可置入LED演出',
-          img: '/yifu/img/show5.c5560354.jpg'
+          img: '/img/show5.c5560354.jpg'
         }]
       }
     }
