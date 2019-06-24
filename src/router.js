@@ -7,11 +7,8 @@ import About from './views/About.vue'
 import News from './views/News.vue'
 import Contact from './views/Contact.vue'
 import Partner from './views/Partner.vue'
-import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
 
 Vue.use(Router);
-Vue.use(Buefy);
 
 export default new Router({
   routes: [
