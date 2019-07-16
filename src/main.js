@@ -6,11 +6,13 @@ import 'buefy/dist/buefy.css'
 import router from './router'
 import VueCarousel3d from 'vue-carousel-3d'
 import Moment from 'vue-moment'
+import VueYoutube from 'vue-youtube'
 
 Vue.use(Buefy);
 Vue.use(Vuex);
 Vue.use(VueCarousel3d);
 Vue.use(Moment);
+Vue.use(VueYoutube);
 
 Vue.config.productionTip = false;
 

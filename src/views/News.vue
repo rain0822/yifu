@@ -182,7 +182,7 @@
         </div>-->
       </div>
 
-      <div><a href="https://www.facebook.com/YIFU2017" target="_blank">More...</a></div>
+      <div><a class="is-size-2" href="https://www.facebook.com/YIFU2017" target="_blank">More...</a></div>
     </section>
   </div>
 </template>
