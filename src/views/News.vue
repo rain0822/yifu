@@ -231,9 +231,9 @@
         //{title: '開幕式活動', subtitle: '#開幕式活動', img: '/yifu/img/card1.681ff81f.jpg', content: '感謝昨天各位嘉賓蒞臨我們「YIFU 藝富演藝有限公司」開幕式活動🎡 感謝所有藝富的工作人員幫忙 一起完成小而精美出色的開幕會 準備了各種豪華食物 飲料酒水 還有抽獎 小編也看了很羨慕 不只活動玩的很開心 與各方老闆交流收獲也很豐富 就來補一下昨天的活動照片給大家欣賞啦~'}
       ];
       axios.get('https://graph.facebook.com/v3.1/913634415380449/feed?fields=from,attachments,message,created_time,place&access_token=EAAC1ZBttoruEBAMGeZB59joIJTegFd8LoAsTBy4KA7c0EHsoWwwP9SbLhgETKizIGfuxdZBMZCCpKr14dFjvg9ZCJvXkZAxt9rNZCzVmxFgkUBRiIhQ8S7PZCUT4VMvBQWmSQrgVlMnoZBwXKjENbQUvAk0TrrpsOphM4uCeAMlpkPgZDZD').then((response) => {
-        let self = this;
+        //let self = this;
         response.data.data.forEach(function(element) {
-          self.$log.info(element);
+          //self.$log.info(element);
 
           let data = {
             from: {

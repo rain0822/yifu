@@ -21,7 +21,7 @@
           </span>
           </a>
 
-          <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuDocumentation" style="height: auto;" v-bind:class="[isActive ? 'is-active' : '']" v-on:click="toggleClass">
+          <div class="navbar-burger burger" style="height: auto;" v-bind:class="[isActive ? 'is-active' : '']" v-on:click="toggleClass">
             <span></span>
             <span></span>
             <span></span>
@@ -30,11 +30,11 @@
 
         <div id="navMenuDocumentation" class="navbar-menu" v-bind:class="[isActive ? 'is-active' : '']" role="navigation">
           <div class="navbar-start" role="presentation">
-            <router-link to="/about" class="navbar-item bd-navbar-item-videos" role="menuitem" title="藝富演藝">藝富演藝</router-link>
-            <router-link to="/show" class="navbar-item bd-navbar-item-videos" role="menuitem" title="商業表演">商業表演</router-link>
-            <router-link to="/news" class="navbar-item bd-navbar-item-blog" role="menuitem" title="最新消息">最新消息</router-link>
-            <router-link to="/contact" class="navbar-item bd-navbar-item-blog" role="menuitem" title="聯絡我們">聯絡我們</router-link>
-            <router-link to="/partner" class="navbar-item bd-navbar-item-blog" role="menuitem" title="戰略夥伴">戰略夥伴</router-link>
+            <router-link v-on:click.native="close" to="/about" class="navbar-item bd-navbar-item-videos" role="menuitem" title="藝富演藝">藝富演藝</router-link>
+            <router-link v-on:click.native="close" to="/show" class="navbar-item bd-navbar-item-videos" role="menuitem" title="商業表演">商業表演</router-link>
+            <router-link v-on:click.native="close" to="/news" class="navbar-item bd-navbar-item-blog" role="menuitem" title="最新消息">最新消息</router-link>
+            <router-link v-on:click.native="close" to="/contact" class="navbar-item bd-navbar-item-blog" role="menuitem" title="聯絡我們">聯絡我們</router-link>
+            <router-link v-on:click.native="close" to="/partner" class="navbar-item bd-navbar-item-blog" role="menuitem" title="戰略夥伴">戰略夥伴</router-link>
             <!--<div class="navbar-item has-dropdown is-hoverable">
 
               <a class="navbar-link" href="#">
@@ -159,6 +159,9 @@
     methods: {
       toggleClass() {
         this.isActive = !this.isActive;
+      },
+      close() {
+        this.isActive = false;
       }
     }
   }
